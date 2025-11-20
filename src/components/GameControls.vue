@@ -1,7 +1,7 @@
 <template>
   <div class="controls">
     <button class="start-btn" @click="$emit('start')" v-if="!gameStarted">Начать игру</button>
-    <button class="reset-btn" @click="$emit('reset')">Новая игра</button>
+    <button class="reset-btn" @click="$emit('reset')" v-if="gameStarted">Новая игра</button>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ defineEmits(['start', 'reset']);
 }
 
 button {
-  padding: 12px 25px;
+  padding: 12px 70px;
   font-size: 1.1rem;
   border: none;
   border-radius: 50px;

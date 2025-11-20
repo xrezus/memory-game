@@ -19,7 +19,9 @@ defineEmits(['flip']);
       :class="{ flipped: card.isFlipped, matched: card.isMatched }"
       @click="$emit('flip')"
   >
-    <div class="card-front">{{ card.value }}</div>
+    <div class="card-front">
+      <span v-if="card.isFlipped">{{ card.value }}</span>
+    </div>
     <div class="card-back"></div>
   </div>
 </template>
